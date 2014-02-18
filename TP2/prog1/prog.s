@@ -129,8 +129,10 @@ sequential_if:
 	jal troca
 	addi $s2,$s2,1
 end_sequential_if:
+	addi $t1,$t1,1
 	b sequential_for2
 end_sequential_for2:
+	addi $t0,$t0,1
 	b sequential_for1
 end_sequential_for1:
 
