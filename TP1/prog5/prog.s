@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 	.eqv STR_MAX_SIZE, 20
 	.eqv PRINT_STR, 8
 	.eqv READ_STR, 9
@@ -7,6 +8,20 @@
 	.data
 str_int:.asciiz "Introduza 2 strings: "
 str_res:.asciiz "Resultados:\n"
+=======
+#	Grupo - Rafel e Rodrigo
+#	2014
+#	Não está completamente correto.
+	.equ STR_MAX_SIZE, 20
+	.equ PRINT_STR, 8
+	.equ READ_STR, 9
+	.equ PRINT_INT, 6
+	.equ PRINT_INT_10, 7 
+	#	
+	.data
+str_int:.asciiz "Introduza 2 strings: "
+str_res:.asciiz "\nResultados:\n"
+>>>>>>> 33ed5bd2e5352c7b5af2dca60301183dbc86ba94
 str1:	.space 21
 str2:	.space 21
 str3:	.space 41
@@ -14,11 +29,13 @@ str3:	.space 41
 	.text
 	.globl main
 main:
+	addiu $sp, $sp, -4
+	sw $ra, 0($sp)
+	#----------------
 	la $a0, str_int
 	li $v0, PRINT_STR
 	syscall
 	#
-
 	la $a0, str1
 	li $a1, STR_MAX_SIZE
 	li $v0, 9
@@ -66,6 +83,9 @@ main:
 	syscall
 	#
 	li $v0, 0
+	#-----------
+	lw $ra, 0($sp)
+	addiu $sp, $sp, 4
 	jr $ra
 ####################################
 strcat:
