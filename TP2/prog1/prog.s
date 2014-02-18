@@ -70,8 +70,9 @@ main_endfor_1:
 	syscall
 	#
 	la $t0, lista #ptr = lista
-	sll $t1, N_INT, 2
-	addiu $t1, $t0, $t1 # lista + N_INT
+	li $t1, N_INT
+	sll $t1, $t1, 2
+	addu $t1, $t0, $t1 # lista + N_INT
 main_for_2:
 	bge $t0, $t1, main_endfor_2
 	#
