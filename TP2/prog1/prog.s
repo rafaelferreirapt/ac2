@@ -1,7 +1,7 @@
 	.equ N_INT, 5
 	.equ TRUE, 1
 	.equ FALSE, 0
-	.equ PRINT_INT, 10
+	.equ PRINT_INT, 6
 	.equ PRINT_STR, 8
 	.equ READ_INT, 4
 	.equ PUT_CHAR, 3
