@@ -1,3 +1,5 @@
+#	Grupo - Rafel e Rodrigo
+#	2014
 	.equ INKEY, 1
 	.equ STRING, 8
 	.data

@@ -1,3 +1,5 @@
+#	Grupo - Rafel e Rodrigo
+#	2014
 	.equ PRINT_STR, 8
 	.data
 	.globl msg

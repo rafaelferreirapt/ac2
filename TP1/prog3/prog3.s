@@ -1,3 +1,5 @@
+#	Grupo - Rafel e Rodrigo
+#	2014
 	.equ GETCHAR, 2
 	.equ PUTCHAR, 3
 	.data

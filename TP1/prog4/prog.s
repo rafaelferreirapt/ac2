@@ -1,3 +1,5 @@
+#	Grupo - Rafel e Rodrigo
+#	2014
 	.equ PRINT_INT_10, 7
 	.equ READ_INT_10, 5
 	.equ PRINT_STR, 8

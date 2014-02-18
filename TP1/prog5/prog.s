@@ -1,3 +1,6 @@
+#	Grupo - Rafel e Rodrigo
+#	2014
+#	Não está completamente correto.
 	.equ STR_MAX_SIZE, 20
 	.equ PRINT_STR, 8
 	.equ READ_STR, 9
@@ -6,19 +9,21 @@
 	#	
 	.data
 str_int:.asciiz "Introduza 2 strings: "
-str_res:.asciiz "Resultados:\n"
-str1:	.space STR_MAX_SIZE+1
-str2:	.space STR_MAX_SIZE+1
-str3:	.space 2*STR_MAX_SIZE+1
+str_res:.asciiz "\nResultados:\n"
+str1:	.space 21
+str2:	.space 21
+str3:	.space 41
 	#
 	.text
 	.globl main
 main:
+	addiu $sp, $sp, -4
+	sw $ra, 0($sp)
+	#----------------
 	la $a0, str_int
 	li $v0, PRINT_STR
 	syscall
 	#
-
 	la $a0, str1
 	li $a1, STR_MAX_SIZE
 	li $v0, 9
@@ -66,6 +71,9 @@ main:
 	syscall
 	#
 	li $v0, 0
+	#-----------
+	lw $ra, 0($sp)
+	addiu $sp, $sp, 4
 	jr $ra
 ####################################
 strcat:
