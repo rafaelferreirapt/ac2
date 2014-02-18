@@ -78,7 +78,7 @@ strcat:
 	move $s2, $a0 # rp  
 	#
 strcat_for:
-	lb $t0, $s0
+	lb $t0, 0($s0)
 	beqz $t0, strcat_endfor
 	addiu $s0, $s0, 1
 	b strcat_for
@@ -96,8 +96,7 @@ strcat_endfor:
 	addiu $sp, $sp, 16
 	jr $ra
 ##################################
-
-sstrcpy:
+strcpy:
 	#dst => $a0
 	#src => $a1
 	#*rp => $t0
@@ -124,7 +123,7 @@ strlen:
 	li $t0, 0
 strlen_for:
 	lb $t1, 0($a0)
-	beqz $t1, '\0', strlen_endfor
+	beq $t1, '\0', strlen_endfor
 	addiu $t0, $t0, 1
 	addiu $a0, $a0, 1
 	b strlen_for
