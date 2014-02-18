@@ -132,7 +132,7 @@ strlen_for:
 	addiu $t0, $t0, 1
 	addiu $a0, $a0, 1
 	b strlen_for
-strlen_endfor
+strlen_endfor:
 	move $v0, $t0
 	jr $ra
 
