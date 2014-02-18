@@ -117,10 +117,10 @@ sequential_for2:
 	bge	$t1, $s0, end_sequential_for2
 sequential_if:
 	sll $t3, $t0, 2 
-	add $t3,$s0,$t3
-	lw $t5,0($t3)	#array[i]
+	add $t3,$s1,$t3
+	lw $t5, 0($t3)	#array[i]
 	sll $t4, $t1, 2
-	add $t4, $s0, $t4
+	add $t4, $s1, $t4
 	lw $t6,0($t4)	#array[j]
 	ble $t3,$t4, end_sequential_if
 	move $a0, $t3
