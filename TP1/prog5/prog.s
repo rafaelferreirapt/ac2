@@ -62,14 +62,62 @@ main:
 	#
 	li $v0, 0
 	jr $ra
+####################################
 strcat:
-	
+	#*dst => $a0 => $s0
+	#*src => $a1 => $s1
+	#*rp = *dst = $s2
+	addiu $sp, $sp, -16
+	sw $ra, 0($sp)
+	sw $s0, 4($sp)
+	sw $s1, 8($sp)
+	sw $s2, 12($sp)
+	#
+	move $s0, $a0 # dst
+	move $s1, $a1 # src
+	move $s2, $a0 # rp  
+	#
+strcat_for:
+	lb $t0, $s0
+	beqz $t0, strcat_endfor
+	addiu $s0, $s0, 1
+	b strcat_for
+strcat_endfor:
+	#
+	move $a0, $s0
+	move $a1, $s1
+	jal strcpy
+	move $v0, $s2
+	#
+	lw $ra, 0($sp)
+	lw $s0, 4($sp)
+	lw $s1, 8($sp)
+	lw $s2, 12($sp)
+	addiu $sp, $sp, 16
 	jr $ra
-strcpy:
+##################################
+
+sstrcpy:
+	#dst => $a0
+	#src => $a1
 	#*rp => $t0
 
-	move $v0, $t0
+	move $t0, $a0	#char *rp = dst;
+
+forcpy:		#for(; (*dst = *src) != 0; dst++, src++);
+	lb $t1, 0($a1)
+	sb $t1, 0($t0)		#*dst = *src;
+
+	beqz $t1, end_forcpy	#(*dst = *src) != 0
+	addi $a1,$a1,1 		#dst++
+	addi $t0,$t0,1		#src++
+
+	b forcpy
+
+end_forcpy:
+	move $v0, $t0 		#return rp
 	jr $ra
+
 ######################################
 strlen:
 	#len = 0 => $t0 = 0
@@ -83,3 +131,29 @@ strlen_for:
 strlen_endfor:
 	move $v0, $t0
 	jr $ra
+
+#######################################
+
+strcmp:
+	#s1 => $a0
+	#s2 => $a1
+	#*s1 => $t0
+	#*s2 => $t1
+
+forcmp:
+	lb $t0, 0($a0)
+	lb $t1, 0($a1)
+
+	bne $t0, $t1, end_forcmp
+	beqz $t0, end_forcmp
+
+	addi $a0,$a0,1
+	addi $a1,$a1,1
+
+	b forcmp
+
+end_forcmp:
+	sub $v0, $t0,$t1
+
+	jr $ra
+
