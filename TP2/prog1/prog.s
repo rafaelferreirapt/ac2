@@ -126,11 +126,11 @@ sequential_if:
 	sll $t4, $s4, 2
 	add $t4, $s1, $t4
 	lw $t6,0($t4)	#array[j]
-	ble $t3,$t4, end_sequential_if
+	ble $t5,$t6, end_sequential_if
 	move $a0, $t3
 	move $a1, $t4
-
 	jal troca
+
 	addi $s2,$s2,1
 end_sequential_if:
 	addi $s4,$s4,1
