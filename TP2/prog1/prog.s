@@ -97,29 +97,32 @@ sequentialSort:
 	#n_val => $a0 => $s0
 	#array => $a1 => $s1
 	#n_trocas => $s2
-	#i => $t0
-	#j => $t1
-	addiu $sp,$sp,-16
+	#i => $s3
+	#j => $s4
+
+	addiu $sp,$sp,-24
 	sw $ra,0($sp)
 	sw $s0,4($sp)
 	sw $s1,8($sp)
 	sw $s2,12($sp)
+	sw $s3, 16($sp)
+	sw $s4, 20($sp)
 
 	move $s0,$a0
 	move $s1,$a1
 	li $s2, 0		#n_trocas = 0
-	li $t0, 0		#i = 0
+	li $t3, 0		#i = 0
 	sub $t2, $s0, 1 #n_val -1
 sequential_for1:
-	bge $t0,$t2, end_sequential_for1
-	addi $t1, $t0,1 #j = i+1
+	bge $s3,$t2, end_sequential_for1
+	addi $s4, $s3,1 #j = i+1
 sequential_for2:
-	bge	$t1, $s0, end_sequential_for2
+	bge	$s4, $s0, end_sequential_for2
 sequential_if:
-	sll $t3, $t0, 2 
+	sll $t3, $s3, 2 
 	add $t3,$s1,$t3
 	lw $t5, 0($t3)	#array[i]
-	sll $t4, $t1, 2
+	sll $t4, $s4, 2
 	add $t4, $s1, $t4
 	lw $t6,0($t4)	#array[j]
 	ble $t3,$t4, end_sequential_if
@@ -129,20 +132,22 @@ sequential_if:
 	jal troca
 	addi $s2,$s2,1
 end_sequential_if:
-	addi $t1,$t1,1
+	addi $s4,$s4,1
 	b sequential_for2
 end_sequential_for2:
-	addi $t0,$t0,1
+	addi $s3,$s3,1
 	b sequential_for1
 end_sequential_for1:
 
 	move $v0,$s2
 
+	lw $s4, 20($sp)
+	lw $s3, 16($sp)
 	lw $s2, 12($sp)
 	lw $s1, 8($sp)
 	lw $s0, 4($sp)
 	lw $ra, 0($sp)
-	addiu $sp,$sp,16
+	addiu $sp,$sp,24
 
 	jr $ra
 #########################################
