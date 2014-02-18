@@ -11,7 +11,7 @@ str1:	.asciiz "\nLeitura e ordenacao de inteiros em base 10\n"
 str2:	.asciiz "Introduza 5 Inteiros: "
 str3:	.asciiz "\nNumero de trocas realizado: "
 str4:	.asciiz "\nResultado da ordenacao: "
-lista:	.space N_INT*4 # static unsigned int lista[N_INT]
+lista:	.space 20 # static unsigned int lista[N_INT]
 	.text
 	.globl main
 main:	
