@@ -1,3 +1,5 @@
+#	Grupo - Rafel e Rodrigo
+#	2014
 	.equ N_INT, 5
 	.equ TRUE, 1
 	.equ FALSE, 0
