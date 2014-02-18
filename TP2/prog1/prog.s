@@ -15,11 +15,11 @@ lista:	.space 20 # static unsigned int lista[N_INT]
 	.text
 	.globl main
 main:	
-	addiu $sp, $sp, -16
+	addiu $sp, $sp, -4
 	sw $ra, 0($sp) 
-	sw $s0, 4($sp) # unsigned int i
-	sw $s1, 8($sp) # unsigned int n_trocas
-	sw $s2, 12($sp) # unsigned lista
+	#sw $s0, 4($sp) # unsigned int i
+	#sw $s1, 8($sp) # unsigned int n_trocas
+	#sw $s2, 12($sp) # unsigned lista
 	#
 	# unsigned int *ptr;
 	#
@@ -31,36 +31,36 @@ main:
 	li $v0, PRINT_STR
 	syscall # printStr()
 	#
-	li $s0, 0 # i=0
-	la $s2, lista # load lista
+	li $t0, 0 # i=0
+	la $t1, lista # load lista
 main_for_1:
-	bge $s0, N_INT, main_endfor_1
-	sll $t0, $s0, 2 # i *2
-	addu $t0, $s2, $t0 # *lista[i]
+	bge $t0, N_INT, main_endfor_1
+	sll $t2, $t0, 2 # i*2
+	addu $t2, $t2, $t1 # *lista[i]
 	#
 	li $v0, READ_INT
 	li $a0, 10
 	syscall
-	sw $v0, 0($t0)
+	sw $v0, 0($t2)
 	#
 	li $v0, PUT_CHAR
 	li $a0, ' '
 	syscall
 	#
-	addiu $s0, $s0, 1
+	addiu $t0, $t0, 1
 	b main_for_1
 main_endfor_1:
 	#
 	li $a0, N_INT
 	la $a1, lista
 	jal sequentialSort
-	move $s1, $v0 #n_trocas
+	move $t3, $v0 #n_trocas
 	#
 	li $v0, PRINT_STR
 	la $a0, str3
 	syscall
 	#
-	move $a0, $s1
+	move $a0, $t3
 	li $a1, 10
 	li $v0, PRINT_INT
 	syscall
@@ -70,7 +70,8 @@ main_endfor_1:
 	syscall
 	#
 	la $t0, lista #ptr = lista
-	addiu $t1, $t0, N_INT # lista + N_INT
+	sll $t1, N_INT, 2
+	addiu $t1, $t0, $t1 # lista + N_INT
 main_for_2:
 	bge $t0, $t1, main_endfor_2
 	#
@@ -87,10 +88,10 @@ main_for_2:
 	b main_for_2
 main_endfor_2:
 	lw $ra, 0($sp)
-	lw $s0, 4($sp)
-	lw $s1, 8($sp)
-	lw $s2, 12($sp)
-	addiu $sp, $sp, 16
+	#lw $s0, 4($sp)
+	#lw $s1, 8($sp)
+	#lw $s2, 12($sp)
+	addiu $sp, $sp, 4
 	jr $ra
 ###
 sequentialSort:
