@@ -1,15 +1,15 @@
-	.equ STR_MAX_SIZE, 20
-	.equ PRINT_STR, 8
-	.equ READ_STR, 9
-	.equ PRINT_INT, 6
-	.equ PRINT_INT_10, 7 
+	.eqv STR_MAX_SIZE, 20
+	.eqv PRINT_STR, 8
+	.eqv READ_STR, 9
+	.eqv PRINT_INT, 6
+	.eqv PRINT_INT_10, 7 
 	#	
 	.data
 str_int:.asciiz "Introduza 2 strings: "
 str_res:.asciiz "Resultados:\n"
-str1:	.space STR_MAX_SIZE+1
-str2:	.space STR_MAX_SIZE+1
-str3:	.space 2*STR_MAX_SIZE+1
+str1:	.space 21
+str2:	.space 21
+str3:	.space 41
 	#
 	.text
 	.globl main
