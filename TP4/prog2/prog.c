@@ -9,7 +9,12 @@ int main(void){
 	LATBbits.LATB8 = 0;
 	
 	char c;
-	
+	while(1){
+		do{
+			c = getChar();
+		}while((c<'a' || c>'g') && (c<'A' || c>'G') && c != '.');
+		displayChar(c);
+	}
 }
 
 void displayChar(char c){
@@ -32,7 +37,6 @@ void displayChar(char c){
 		LATBbits.LATB3 = 1;
 	}else if(c == '.'){
 		LATBbits.LATB7 = 1;
-	}
-	
+	}	
 }
 
