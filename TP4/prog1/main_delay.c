@@ -1,5 +1,6 @@
 #include <detpic32.h>
-#include <delay.c>
+
+void delay(unsigned int);
 
 int main(void)
 {
