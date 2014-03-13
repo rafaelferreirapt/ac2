@@ -4,9 +4,9 @@ Microchip PIC32 Memory-Usage Report
 kseg0 Program-Memory Usage
 section                    address  length [bytes]      (dec)  Description
 -------                 ----------  -------------------------  -----------
-.text                   0x9d001400          0x1e4         484  Application's executable code 
-.rodata                 0x9d0015e4           0x58          88  Read-only constant data 
-      Total kseg0_program_mem used  :       0x23c         572  0.1% of 0x7ec00
+.text                   0x9d001400          0x1cc         460  Application's executable code 
+.rodata                 0x9d0015cc           0x28          40  Read-only constant data 
+      Total kseg0_program_mem used  :       0x1f4         500  0.1% of 0x7ec00
 
 kseg0 Boot-Memory Usage
 section                    address  length [bytes]      (dec)  Description
@@ -25,7 +25,7 @@ section                    address  length [bytes]      (dec)  Description
 -------                 ----------  -------------------------  -----------
          Total kseg1_boot_mem used  :           0           0  <1% of 0x490
         --------------------------------------------------------------------------
-         Total Program Memory used  :       0x500        1280  0.2% of 0x80480
+         Total Program Memory used  :       0x4b8        1208  0.2% of 0x80480
         --------------------------------------------------------------------------
 
 
@@ -57,8 +57,8 @@ sfrs             0xbf800000         0x00100000
 Linker script and memory map
 
 LOAD prog.o
+LOAD ../send2displays.o
 LOAD ../delay.o
-LOAD ../send2display.o
 LOAD /opt/pic32mx/lib/libdetpic32.a
 LOAD /opt/pic32mx/lib/gcc/pic32mx/3.4.4/libgcc.a
                 0x00000400                PROVIDE (_min_stack_size, 0x400)
@@ -366,49 +366,49 @@ LOAD /opt/pic32mx/lib/startup.o
  *(.vector_63)
                 0x00000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_63) <= (_vector_spacing << 0x5))), function at exception vector 63 too large)
 
-.text           0x9d001400      0x1e4
+.text           0x9d001400      0x1cc
                 0x9d001400                _text_begin = .
  *(.text .stub .text.* .gnu.linkonce.t.*)
- .text          0x9d001400       0x44 prog.o
+ .text          0x9d001400       0x2c prog.o
                 0x9d001400                main
- .text          0x9d001444       0x48 ../delay.o
-                0x9d001444                delay
- .text          0x9d00148c       0xa8 ../send2display.o
-                0x9d00148c                send2display10
- .text          0x9d001534       0xb0 /opt/pic32mx/lib/startup.o
-                0x9d0015a4                printStr
-                0x9d001584                printInt
-                0x9d001564                readInt
-                0x9d0015dc                resetCoreTimer
-                0x9d001554                putChar
-                0x9d0015b4                readStr
-                0x9d001594                printInt10
-                0x9d001534                inkey
-                0x9d0015c4                exit
-                0x9d001544                getChar
-                0x9d001574                readInt10
-                0x9d0015d4                readCoreTimer
+ .text          0x9d00142c       0xa8 ../send2displays.o
+                0x9d00142c                send2displays
+ .text          0x9d0014d4       0x48 ../delay.o
+                0x9d0014d4                delay
+ .text          0x9d00151c       0xb0 /opt/pic32mx/lib/startup.o
+                0x9d00158c                printStr
+                0x9d00156c                printInt
+                0x9d00154c                readInt
+                0x9d0015c4                resetCoreTimer
+                0x9d00153c                putChar
+                0x9d00159c                readStr
+                0x9d00157c                printInt10
+                0x9d00151c                inkey
+                0x9d0015ac                exit
+                0x9d00152c                getChar
+                0x9d00155c                readInt10
+                0x9d0015bc                readCoreTimer
  *(.text.*personality*)
  *(.gnu.warning)
  *(.mips16.fn.*)
  *(.mips16.call.*)
-                0x9d0015e4                _text_end = .
+                0x9d0015cc                _text_end = .
 
-.rodata         0x9d0015e4       0x58
+.rodata         0x9d0015cc       0x28
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x9d0015e4       0x40 ../send2display.o
- .rodata        0x9d001624       0x15 /opt/pic32mx/lib/startup.o
+ .rodata        0x9d0015cc       0x10 ../send2displays.o
+ .rodata        0x9d0015dc       0x15 /opt/pic32mx/lib/startup.o
  *(.rodata1)
-                0x9d00163c                . = ALIGN (0x4)
- *fill*         0x9d001639        0x3 00
+                0x9d0015f4                . = ALIGN (0x4)
+ *fill*         0x9d0015f1        0x3 00
 
-.sdata2         0x9d00163c        0x0
+.sdata2         0x9d0015f4        0x0
  *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
-                0x9d00163c                . = ALIGN (0x4)
+                0x9d0015f4                . = ALIGN (0x4)
 
-.sbss2          0x9d00163c        0x0
+.sbss2          0x9d0015f4        0x0
  *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
-                0x9d00163c                . = ALIGN (0x4)
+                0x9d0015f4                . = ALIGN (0x4)
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
@@ -419,12 +419,12 @@ LOAD /opt/pic32mx/lib/startup.o
 .dbg_data       0xa0000000        0x0
                 0xa0000000                . = (. + DEFINED (_DEBUGGER)?0x200:0x0)
 
-.data           0xa0000000        0x0 load address 0x9d00163c
+.data           0xa0000000        0x0 load address 0x9d0015f4
                 0xa0000000                _data_begin = .
  *(.data .data.* .gnu.linkonce.d.*)
  *(.gnu.linkonce.d.*personality*)
  *(.data1)
-                0x9d00163c                _data_image_begin = LOADADDR (.data)
+                0x9d0015f4                _data_image_begin = LOADADDR (.data)
 
 .eh_frame
  *(.eh_frame)
@@ -434,7 +434,7 @@ LOAD /opt/pic32mx/lib/startup.o
  *(.got.plt)
  *(.got)
 
-.sdata          0xa0000000        0x0 load address 0x9d00163c
+.sdata          0xa0000000        0x0 load address 0x9d0015f4
                 0xa0000000                _sdata_begin = .
  *(.sdata .sdata.* .gnu.linkonce.s.*)
                 0xa0000000                _sdata_end = .
@@ -478,12 +478,12 @@ LOAD /opt/pic32mx/lib/startup.o
                 0xa0002000                . = (. + _min_stack_size)
  *fill*         0xa0000000     0x2000 00
 
-.ramfunc        0xa0002000        0x0 load address 0x9d00163c
+.ramfunc        0xa0002000        0x0 load address 0x9d0015f4
                 0xa0002000                _ramfunc_begin = .
  *(.ramfunc .ramfunc.*)
                 0xa0002000                . = ALIGN (0x4)
                 0xa0002000                _ramfunc_end = .
-                0x9d00163c                _ramfunc_image_begin = LOADADDR (.ramfunc)
+                0x9d0015f4                _ramfunc_image_begin = LOADADDR (.ramfunc)
                 0x00000000                _ramfunc_length = SIZEOF (.ramfunc)
                 0x00002000                _bmxdkpba_address = (_ramfunc_begin - 0xa0000000)
                 0x00020000                _bmxdudba_address = 0x20000
@@ -494,8 +494,8 @@ LOAD /opt/pic32mx/lib/startup.o
 .pdr            0x00000000       0x60
  *(.pdr)
  .pdr           0x00000000       0x20 prog.o
- .pdr           0x00000020       0x20 ../delay.o
- .pdr           0x00000040       0x20 ../send2display.o
+ .pdr           0x00000020       0x20 ../send2displays.o
+ .pdr           0x00000040       0x20 ../delay.o
 
 .reginfo        0x00000000       0x18
  *(.reginfo)
@@ -522,8 +522,8 @@ LOAD /opt/pic32mx/lib/startup.o
 .comment        0x00000000       0xe7
  *(.comment)
  .comment       0x00000000       0x4d prog.o
- .comment       0x0000004d       0x4d ../delay.o
- .comment       0x0000009a       0x4d ../send2display.o
+ .comment       0x0000004d       0x4d ../send2displays.o
+ .comment       0x0000009a       0x4d ../delay.o
 
 .debug
  *(.debug)
@@ -580,4 +580,4 @@ LOAD /opt/pic32mx/lib/startup.o
  *(.note.GNU-stack)
 OUTPUT(prog.elf elf32-tradlittlemips)
 
-.mdebug.abi32   0x9d00163c        0x0
+.mdebug.abi32   0x9d0015f4        0x0
