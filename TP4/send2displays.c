@@ -14,21 +14,25 @@ void send2displays(unsigned char value){
 	if (!displayFlag){
 		LATBbits.LATB8 = 0;
 		LATBbits.LATB9 = 1;
-		/* paridade */
+		LATB = (LATB & 0xFF00) | first;
+		/* paridade
 		if(first%2==0){
 			LATB = (LATB & 0xFF00) | first | 0x80;
 		}else{
 			LATB = (LATB & 0xFF00) | first;
 		}
+		*/
 	}else{
 		LATBbits.LATB8 = 1;
 		LATBbits.LATB9 = 0;
-		/* paridade */
+		LATB = (LATB & 0xFF00) | second;
+		/* paridade
 		if(first%2!=0){
 			LATB = (LATB & 0xFF00) | second | 0x80;
 		}else{
 			LATB = (LATB & 0xFF00) | second;
 		}
+		*/
 	}
 
 	displayFlag = !displayFlag; /* toggle display */
