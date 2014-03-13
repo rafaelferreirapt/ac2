@@ -2,7 +2,8 @@
 	"folders":
 	[
 		{
-			"path": "/home/rafael/AC2"
+			"follow_symlinks": true,
+			"path": "/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2"
 		}
 	]
 }
