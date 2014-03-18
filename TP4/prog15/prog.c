@@ -1,3 +1,4 @@
+#include <detpic32.h>
 void send2displays(char);
 void delay(unsigned int);
 unsigned char toBcd(unsigned char);
@@ -15,14 +16,17 @@ int main(void){
 		}while(++i<4);
 		if(c==0x3B){
 			c = 0;
-			i = 0;
 			do{
+				i = 0;
 				do{
 					delay(10);
 					send2displays(0);
 				}while(++i<50);
+				/* limpar o display */
+				LATB = LATB & 0xFC00; /* colocar tudo a 0 => a mascara foi alterada para o bit 7 ser definido antes */
+				/* esperar 500 ms */
 				delay(500);
-			}while(c<5);
+			}while(++c<5);
 			c = 0;
 		}else{
 			c++;
