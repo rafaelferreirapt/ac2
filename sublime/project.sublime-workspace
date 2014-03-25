@@ -8,10 +8,10 @@
 	"buffers":
 	[
 		{
-			"file": "/home/rafael/AC2/TP2/prog1/prog.s",
+			"file": "/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP6/prog1a/prog.c",
 			"settings":
 			{
-				"buffer_size": 2568,
+				"buffer_size": 1186,
 				"line_ending": "Unix"
 			}
 		}
@@ -35,7 +35,11 @@
 	},
 	"console":
 	{
-		"height": 139.0
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
 	},
 	"distraction_free":
 	{
@@ -48,6 +52,18 @@
 	},
 	"file_history":
 	[
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/prog7/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/Partilhado 2º Ano 2º Semestre/AC2/Estudo - Anos anteriores/Práticas - Anos Anteriores/AC2 - Joana/Aula6/Ex1.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP6/sh/prog1.sh",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/prog3/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/sh/prog7.sh",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/prog5/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/prog4/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/prog2b/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/prog2a/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/sh/prog2a.sh",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/Partilhado 2º Ano 2º Semestre/AC2/Estudo - Anos anteriores/Práticas - Anos Anteriores/aula05/aula05-01.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/prog1/prog.c",
 		"/home/rafael/AC2/TP2/prog1/prog.s",
 		"/home/rafael/AC2/.gitignore",
 		"/home/rafael/AC2/TP1/prog5/prog.s",
@@ -98,29 +114,31 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/home/rafael/AC2/TP2/prog1/prog.s",
+					"file": "/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP6/prog1a/prog.c",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2568,
+						"buffer_size": 1186,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								13,
-								13
+								1020,
+								1020
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/R/R.tmLanguage",
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2313.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -157,6 +175,15 @@
 		]
 	},
 	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 256.0
+	},
+	"project": "project.sublime-project",
 	"replace":
 	{
 		"height": 64.0
@@ -178,10 +205,24 @@
 		],
 		"width": 0.0
 	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 150.0,
-	"status_bar_visible": true
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
 }

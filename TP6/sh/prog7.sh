@@ -1,0 +1,1 @@
+pcompile prog.c ../../TP4/send2displays.c ../../TP4/delay.c ../../TP4/tobcd.c && ldpic32 -w prog.hex && pterm

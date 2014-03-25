@@ -8,5 +8,4 @@ int main(void)
 	AD1CHSbits.CH0SA = 14; // Selects AN14 as input for the A/D converter
 	AD1CON2bits.SMPI = 0; // 4 samples will be converted and stored
 
-	x
 }
