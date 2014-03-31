@@ -3,15 +3,35 @@
 	{
 		"selected_items":
 		[
+			[
+				"value",
+				"value2display"
+			],
+			[
+				"LA",
+				"LATE0"
+			],
+			[
+				"TRI",
+				"TRISE0"
+			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP6/prog1a/prog.c",
+			"file": "/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP4/delay.c",
 			"settings":
 			{
-				"buffer_size": 1186,
+				"buffer_size": 183,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP4/tobcd.c",
+			"settings":
+			{
+				"buffer_size": 84,
 				"line_ending": "Unix"
 			}
 		}
@@ -52,13 +72,24 @@
 	},
 	"file_history":
 	[
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/prog4/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/_/prog_tp3.s",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP3/parte2prog1/prog.s",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP3/parte3prog3/prog.s",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP2/prog1/prog.s",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP3/parte1prog1/prog.s",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP6/prog4/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP4/delay.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/sh/prog7.sh",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP6/prog3/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/prog3/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP6/prog1/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP6/prog2/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP6/prog1a/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/prog7/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/Partilhado 2º Ano 2º Semestre/AC2/Estudo - Anos anteriores/Práticas - Anos Anteriores/AC2 - Joana/Aula6/Ex1.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP6/sh/prog1.sh",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/prog3/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/sh/prog7.sh",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/prog5/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/prog4/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/prog2b/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/prog2a/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/sh/prog2a.sh",
@@ -109,30 +140,57 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP6/prog1a/prog.c",
+					"file": "/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP4/delay.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1186,
+						"buffer_size": 183,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1020,
-								1020
+								183,
+								181
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C Improved/C Improved.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/C Improved/C Improved.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP4/tobcd.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 84,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								84,
+								84
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C Improved/C Improved.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

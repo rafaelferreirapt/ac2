@@ -17,11 +17,11 @@ main:
 	#inicialização
 	li $v0, 12
 	syscall 		#reset ao timer
-	li $t0,0		#contador
+	li $t0, 0		#contador
 while:
 	li $v0, 11
 	syscall			# read core timer
-	blt $v0, 5000000, while # enquanto nao for maior de 4Hz vai ler
+	blt $v0, 5000000, while # esperar 0.25s
 	# leitura
 	lw $t3, PORTE($t2)
 	move $t6, $t4 # save do $t4 => $t6
