@@ -22,6 +22,10 @@ if:
 	blt $v0, 1, endif
 	add $t1, $t1, $v0
 endif:
+	lw $t2, LATE($t0)
+	andi $t2, $t2, 0xF0
+	or $t1, $t1, $t2
+
 	sw $t1, LATE($t0)
 
 	b while
