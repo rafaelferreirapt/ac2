@@ -2,10 +2,10 @@
 	.equ TRISE, 0x6100
 	.equ PORTE, 0x6110
 	.equ LATE,  0x6120
-	.equ SEQ_SYMBOLS, 8
+	.equ SEQ_LENGTH, 10
 	.equ CALIBRATION_VALUE, 6000
 	.data
-seq:.byte 0x1, 0x7, 0x4, 0x5, 0x7, 0x3, 0x4, 0x7
+seq:.byte 0x1, 0x2, 0x3, 0x4, 0x5, 0xF, 0xD, 0xA, 0x0, 0xC
 	.text
 	.globl main
 main:
@@ -16,12 +16,11 @@ main:
 	sw $t1, TRISE($t0)
 	#configuracao feita
 
+	li $t1, 0 #contador
+if:
+	blt $t1, SEQ_LENGTH, endif
 	li $t1, 0
-while:
-	blt $t1, SEQ_SYMBOLS, not_zero
-	li $t1, 0
-not_zero:
-	#obter e colocar
+endif:
 	lb $t2, seq($t1)
 	lw $t3, LATE($t0)
 	andi $t3, $t3, 0xFFF0
@@ -30,16 +29,18 @@ not_zero:
 	#delay
 	li $a0, 300
 for_1:
+	#importante ser beq z ou então $zero
 	beqz $a0, endfor_1
-	addiu $a0, $a0, -1
 	li $a1, CALIBRATION_VALUE
 for_2:
 	beqz $a1, endfor_2
-	addiu $a1, $a1, -1
+	add $a1, $a1, -1
 	b for_2
 endfor_2:
+	add $a0, $a0, -1
 	b for_1
 endfor_1:
+	#delay
 	addiu $t1, $t1, 1
-	b while
+	b if
 	jr $ra
