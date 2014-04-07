@@ -1,0 +1,23 @@
+Exercícios:
+Assembly:
+Exercício 1 - Ler 4 bits do dipswitch fazer as operações or, xor, mult e xnor. bit0+bit1(or) e bit2+bit3(or), apresentando o resultado nos leds[X][X]
+
+Exercício 2 - Ler os 4 bits do dipswitch somar com o valor introduzido no teclado e apresentar nos leds, o valor tem de estar entre 1 e 9 caso o número não seja válido o valor introduzido é colocado nos led’s.[X][X]
+Exercício 3 - Para cada bit do dipswitch está associado uma sequência nos leds. Para o bit 0 está associado contagem crescente, para o bit 1 contagem decrescente da seguinte sequência: 0000, 1111, 1101, 1010, 0011.
+Para o bit 2 e 3 está associado esta sequência, também crescente e decrescente: 1100, 0011, 0110, 1001, 0110, 0001E. Usando o core timer gere à frequência de 25Hz cada transição.[X][X]
+Exercício 4 - O programa deve aceitar uma sequência de caracteres (string e armazenar num buffer), depois vai transforma-lo somando com o valor obtido no dipswitch caracter a caracter e guardar no buffer. Esse valor final deve ser enviado para o terminal. A quando da leitura os leds devem acender com uma frequência de 30HZ usando a função delay.[X][X]
+Fiz mais um exercício de uso do dipswitch e outro para ativação dos leds
+     lw $t3, LATE($t0)
+     andi $t3, $t3, 0xFFF0
+     or $t2, $t3, $t2
+     sw $t2, LATE($t0)
+
+
+C:
+Exercício 1 - Este exercício é básico, trata-se de acender os leds como se fez nos últimos exercícios de treino de assembly. [X][ ]
+
+Exercício 2 - O segundo exercício é para contar de 0 a 20 hexadecimal usando os displays para treinar como se configura (10 portos) quais são os portos para ligar (8 e 9) o resto é para os códigos. Ver a função send2displays porque pode ser pedida [X][ ]
+
+Exercício 3 - Neste exercício deve-se ler o valor da ADC e apresentar o resultado sobre barra de leds de 4 leds. [X][ ]
+
+Exercício 4 - Ler do dipswitch o valor e subtrair ao valor obtido na ADC depois representar no display de 7 segmentos. Quando a ADC atingir o valor máximo os valores no dipswitch devem piscar com uma frequência de 50Hz.

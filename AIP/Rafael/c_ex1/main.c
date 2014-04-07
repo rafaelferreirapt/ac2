@@ -1,5 +1,10 @@
 #include <detpic32.h>;
 
+/*
+Exercício 1 - Este exercício é básico, trata-se de
+acender os leds como se fez nos últimos exercícios de treino de assembly.
+*/
+
 int CALIBRATION_VALUE = 4998;
 void delay(int);
 

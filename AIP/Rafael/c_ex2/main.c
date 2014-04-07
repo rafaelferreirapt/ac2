@@ -1,5 +1,12 @@
 #include <detpic32.h>;
 
+/*
+Exercício 2 - O segundo exercício é para contar de 0 a 20 hexadecimal
+usando os displays para treinar como se configura (10 portos) quais
+são os portos para ligar (8 e 9) o resto é para os códigos. Ver a função
+send2displays porque pode ser pedida
+*/
+
 int CALIBRATION_VALUE = 4998;
 void delay(int);
 void send2displays(unsigned char);

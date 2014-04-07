@@ -1,5 +1,8 @@
 #include <detpic32.h>;
 
+/* Exercício 3 - Neste exercício deve-se ler o valor da ADC e apresentar
+o resultado sobre barra de leds de 4 leds. */
+
 int CALIBRATION_VALUE = 4998;
 void delay(int);
 
