@@ -29,11 +29,10 @@ endif:
 	#delay
 	li $a0, 300
 for_1:
-	#importante ser beq z ou então $zero
-	beqz $a0, endfor_1
+	beq $a0, 0, endfor_1
 	li $a1, CALIBRATION_VALUE
 for_2:
-	beqz $a1, endfor_2
+	beq $a1, 0, endfor_2
 	add $a1, $a1, -1
 	b for_2
 endfor_2:
