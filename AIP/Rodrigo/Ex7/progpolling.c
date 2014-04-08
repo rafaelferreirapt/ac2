@@ -23,49 +23,40 @@ int main(void){
 
 	AD1CON1bits.ON = 1;
 
-	IFS1bits.AD1IF = 0;
-	IPC6bits.AD1IP = 5;
-	IEC1bits.AD1IE = 1;
-
-	EnableInterrupts();
-
-	AD1CON1bits.ASAM = 1;
-
+	
 	while(1){
+		
+		IFS1bits.AD1IF = 0;
+		AD1CON1bits.ASAM = 1;
+		while(IFS1bits.AD1IF == 0);
+		int media=0; 
+		int i;
+		int *p = (int *)(&ADC1BUF0);
 
+		for(i =0; i<4; i++){
+			media += p[i*4];
+		}
+
+		media /= 4;
+
+		if(media >= 3*0xFF){
+			LATE = (LATE & 0xFFF0) | 0x000F;
+			delay(100);
+			LATE = (LATE & 0xFFF0);
+			delay(100);
+		}else if(media >= 2*0xFF){
+			LATE = (LATE & 0xFFF0) | 0x0003;
+		}else if(media >= 0xFF){
+			LATE = (LATE & 0xFFF0) | 0x0001;
+		}else{
+			LATE = (LATE & 0xFFF0); 
+		}
+		
 	}
 
 	return 0;
 }
 
-void _int_(27) isr_adc(void){
-	int media=0; 
-	int i;
-	int *p = (int *)(&ADC1BUF0);
-
-	for(i =0; i<4; i++){
-		media += p[i*4];
-	}
-
-	media /= 4;
-
-	if(media >= 3*0xFF){
-		LATE = (LATE & 0xFFF0) | 0x000F;
-		delay(100);
-		LATE = (LATE & 0xFFF0);
-		delay(100);
-	}else if(media >= 2*0xFF){
-		LATE = (LATE & 0xFFF0) | 0x0003;
-	}else if(media >= 0xFF){
-		LATE = (LATE & 0xFFF0) | 0x0001;
-	}else{
-		LATE = (LATE & 0xFFF0); 
-	}
-
-	IFS1bits.AD1IF = 0;
-	AD1CON1bits.ASAM = 1;
-		
-}
 
 void delay(unsigned int n_intervals){
 	volatile unsigned int i;
