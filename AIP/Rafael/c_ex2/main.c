@@ -26,16 +26,14 @@ void main(){
 
 void delay(int num_intervals){
 	volatile unsigned int i;
-	for(; num_intervals != 0; num_intervals--){
+	for(; num_intervals != 0; num_intervals--)
 		for(i = CALIBRATION_VALUE; i!=0; i--)
 			;
-	}
 }
 
 void send2displays(unsigned char value){
 	static unsigned char displayFlag = 0;
-	static const unsigned char codes[] = {0x77, 0x41, 0x3B, 0x6B, 0x4D, 0x6E, 0x7E, 0x43,
-		0x7F, 0x6F, 0x5F, 0x7C, 0x36, 0x79, 0x3E, 0x1E};
+	static const unsigned char codes[] = {0x77, 0x41, 0x3B, 0x6B, 0x4D, 0x6E, 0x7E, 0x43, 0x7F, 0x6F, 0x5F, 0x7C, 0x36, 0x79, 0x3E, 0x1E};
 	/* eles dão-nos sempre estes códigos aqui de cima */
 
 	TRISB = TRISB & 0xFC00;
