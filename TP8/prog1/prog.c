@@ -27,5 +27,7 @@ int main(void){
 	U1STAbits.UTXEN = 1;
 	U1STAbits.URXEN = 1;
 
-	U1MODEbits.ON = 1;;
+	U1MODEbits.ON = 1;
+
+	return 0;
 }

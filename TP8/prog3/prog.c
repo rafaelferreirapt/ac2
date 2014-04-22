@@ -2,6 +2,7 @@
 
 void delay(unsigned int);
 void putc(unsigned char);
+void puts(unsigned char*);
 
 int main(void){
 	//configuration UART1
@@ -33,7 +34,7 @@ int main(void){
 	U1MODEbits.ON = 1;
 
 	while(1){
-		putc('+');
+		puts("String de teste\n");
 		delay(1000);
 	}
 }
@@ -42,4 +43,11 @@ void putc(unsigned char byte2send){
 	while(U1STAbits.UTXBF);
 
 	U1TXREG = byte2send;
+}
+
+void puts(unsigned char* string){
+	int i = 0;
+	while(string[i]!='\0'){
+		putc(string[i++]);
+	}
 }
