@@ -10,7 +10,7 @@ volatile unsigned char value2display = 0; //Global variable
 
 int main(void)
 {
-	const static unsigned char pwmValues[]={3, 15, 40, 90};
+	const static unsigned int pwmValues[]={3, 15, 40, 90};
 	configureAll();
 	EnableInterrupts();
 
@@ -18,44 +18,28 @@ int main(void)
 	TRISEbits.TRISE5 = 1;
 	TRISEbits.TRISE6 = 1;
 	TRISEbits.TRISE7 = 1;
+	T3CONbits.TCKPS = 2; // 1:256 prescaler (i.e fin = 78,125 KHz)
+
+	/* configuração da luz */
+	PR3 = 49999; // Fout = 20MHz / (32 * (39061,5 + 1)) = 2 Hz
+	TMR3 = 0; // Reset timer T3 count register
+	T3CONbits.TON = 1; // Enable timer T3 (must be the last command of the // timer configuration sequence)
+
+	OC1CONbits.OCM = 6;
+	OC1CONbits.OCTSEL = 1;
+	OC1CONbits.ON = 1;
 
 	while(1){
 		if(PORTEbits.RE4 == 0 && PORTEbits.RE5 == 0){
-			T3CONbits.TCKPS = 2; // 1:256 prescaler (i.e fin = 78,125 KHz)
-
-			PR3 = 49999; // Fout = 20MHz / (32 * (39061,5 + 1)) = 2 Hz
-			TMR3 = 0; // Reset timer T3 count register
-			T3CONbits.TON = 1; // Enable timer T3 (must be the last command of the // timer configuration sequence)
-
-			OC1CONbits.OCM = 6;
-			OC1CONbits.OCTSEL = 1;
-
 			setPWM(0);
-
-			OC1CONbits.ON = 1;
 			IEC0bits.T1IE = 1;
-
+		}else if(PORTEbits.RE4 == 0 && PORTEbits.RE5 == 1){
+			setPWM(100);
+			IEC0bits.T1IE = 0;
 		}else if(PORTEbits.RE4 == 1 && PORTEbits.RE5 == 0){
+			int dc = (PORTE >> 6) & 0x3;
+			setPWM(dc);
 			IEC0bits.T1IE = 0;
-		}else if(PORTEbits.RE4==0 && PORTEbits.RE5==1){
-			int dc = (PORTE && 0x00C0) >> 6;
-
-			printInt(dc, 2);
-			T3CONbits.TCKPS = 2; // 1:256 prescaler (i.e fin = 78,125 KHz)
-
-			PR3 = 49999; // Fout = 20MHz / (32 * (39061,5 + 1)) = 2 Hz
-			TMR3 = 0; // Reset timer T3 count register
-			T3CONbits.TON = 1; // Enable timer T3 (must be the last command of the // timer configuration sequence)
-
-			OC1CONbits.OCM = 6;
-			OC1CONbits.OCTSEL = 1;
-
-			setPWM(pwmValues[dc]);
-
-			OC1CONbits.ON = 1;
-			IEC0bits.T1IE = 0;
-		}else{
-			IEC0bits.T1IE = 1; // Autorizar a interrupção
 		}
 	}
 	return 0;
