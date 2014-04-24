@@ -1,5 +1,7 @@
 #include <detpic32.h>
 
+void setPWM(unsigned int);
+
 int main(void){
 	T3CONbits.TCKPS = 2; // 1:256 prescaler (i.e fin = 78,125 KHz)
 
@@ -10,7 +12,7 @@ int main(void){
 	OC1CONbits.OCM = 6;
 	OC1CONbits.OCTSEL = 1;
 
-	setPWM(25);
+	setPWM(100);
 
 	OC1CONbits.ON = 1;
 	while(1);
