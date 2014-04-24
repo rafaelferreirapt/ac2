@@ -4,6 +4,7 @@ void delay(unsigned int);
 void send2displays(unsigned char);
 unsigned char toBcd(unsigned char);
 void configureAll();
+void setPWM(unsigned int);
 
 volatile unsigned char value2display = 0; //Global variable
 
@@ -16,7 +17,7 @@ int main(void)
 	TRISEbits.TRISE4 = 1;
 	TRISEbits.TRISE5 = 1;
 	TRISEbits.TRISE6 = 1;
-	TRISEbits.TRISE7 = 1;	
+	TRISEbits.TRISE7 = 1;
 
 	while(1){
 		if(PORTEbits.RE4 == 0 && PORTEbits.RE5 == 0){
@@ -35,14 +36,9 @@ int main(void)
 			IEC0bits.T1IE = 1;
 
 		}else if(PORTEbits.RE4 == 1 && PORTEbits.RE5 == 0){
-
-			IEC0bits.T1IE = 0; 
-
+			IEC0bits.T1IE = 0;
 		}else if(PORTEbits.RE4==0 && PORTEbits.RE5==1){
-
-			dc = PORTEbits.RE6;
-			dc << 1;
-			dc += PORTEbits.RE7;
+			int dc = (PORTE && 0x00C0) >> 6;
 
 			printInt(dc, 2);
 			T3CONbits.TCKPS = 2; // 1:256 prescaler (i.e fin = 78,125 KHz)
@@ -54,13 +50,11 @@ int main(void)
 			OC1CONbits.OCM = 6;
 			OC1CONbits.OCTSEL = 1;
 
-			setPWM(3);
+			setPWM(pwmValues[dc]);
 
 			OC1CONbits.ON = 1;
-			IEC0bits.T1IE = 0; 
-
+			IEC0bits.T1IE = 0;
 		}else{
-			
 			IEC0bits.T1IE = 1; // Autorizar a interrupção
 		}
 	}
