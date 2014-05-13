@@ -79,7 +79,10 @@ transmissão da UART1
 void _int_(VECTOR_UART1) isr_uart1(void){
 	if(IFS0bits.U1TXIF){
 		if(txb.count>0){
-			while(UxSTAbits.UTXBF == 0 && txb.count != 0){
+			/*
+				UxSTAbits.UTXBF => Transmiter buffer full
+			*/
+			while(U1STAbits.UTXBF == 0 && txb.count != 0){
 				U1TXREG = txb.data[txb.head];
 				txb.head = (txb.head + 1) & INDEX_MASK;
 				txb.count--;
@@ -105,7 +108,7 @@ void _int_(VECTOR_UART1) isr_uart1(void){
 				rxb.count++;
 			}else{
 				// increment "head" variable (discard oldest character)
-				rxb.head++;
+				rxb.head = (rxb.head + 1) & INDEX_MASK;
 			}
 		}
 
@@ -184,9 +187,9 @@ void comDrv_config(unsigned int baud, char parity, unsigned int Stopbits){
 
 	/*
 		** UART configure interrupts **
-		URXISEL<1:0> do registo UxSTA -> O modo como as interrupções são geradas;
+		UTXISEL<1:0> do registo UxSTA -> O modo como as interrupções são geradas;
 	*/
-	U1STAbits.URXISEL = 00;
+	U1STAbits.UTXISEL = 00;
 }
 
 char comDrv_getc(char *pchar){
