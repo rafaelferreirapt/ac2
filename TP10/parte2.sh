@@ -1,0 +1,1 @@
+pcompile prog.c i2c.c ../../TP4/delay.c && ldpic32 -w prog.hex && pterm

@@ -67,7 +67,7 @@ void configureAll(){
 
 	T1CONbits.TCKPS = 3;
 
-	PR1 = 19530; // Fout = 20MHz / (32 * (39061,5 + 1)) = 2 Hz
+	PR1 = 19530; // Fout = 20MHz / (256 * (39061,5 + 1)) = 2 Hz
 	TMR1 = 0; // Reset timer T3 count register
 	T1CONbits.TON = 1; // Enable timer T3 (must be the last command of the // timer configuration sequence)
 

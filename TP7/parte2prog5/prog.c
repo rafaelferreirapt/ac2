@@ -10,7 +10,6 @@ volatile unsigned char value2display = 0; //Global variable
 
 int main(void)
 {
-	const static unsigned int pwmValues[]={3, 15, 40, 90};
 	configureAll();
 	EnableInterrupts();
 
@@ -37,8 +36,19 @@ int main(void)
 			setPWM(100);
 			IEC0bits.T1IE = 0;
 		}else if(PORTEbits.RE4 == 1 && PORTEbits.RE5 == 0){
-			int dc = (PORTE >> 6) & 0x3;
-			setPWM(dc);
+			if(PORTEbits.RE7 == 0 && PORTEbits.RE6 == 0){
+				setPWM(3);
+				send2displays(3);
+			}else if(PORTEbits.RE7 == 0 && PORTEbits.RE6 == 1){
+				setPWM(15);
+				send2displays(15);
+			}else if(PORTEbits.RE7 == 1 && PORTEbits.RE6 == 0){
+				setPWM(40);
+				send2displays(40);
+			}else if(PORTEbits.RE7 == 1 && PORTEbits.RE6 == 1){
+				setPWM(90);
+				send2displays(90);
+			}
 			IEC0bits.T1IE = 0;
 		}
 	}

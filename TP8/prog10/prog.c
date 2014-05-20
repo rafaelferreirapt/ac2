@@ -1,121 +1,143 @@
 #include <detpic32.h>
 
 void delay(unsigned int);
-void putc(unsigned char);
-char getc(void);
-void puts(unsigned char*);
-void configUart(unsigned int, char, unsigned int);
+void send2displays(unsigned char);
+unsigned char toBcd(unsigned char);
+void configureAll();
+void setPWM(unsigned int);
 
-int main(void){
+volatile unsigned char value2display = 0; //Global variable
 
-	configUart(115200,'N',1);
-
-	/*
-		** UART configure interrupts **
-		URXISEL<1:0> do registo UxSTA -> O modo como as interrupções são geradas;
-	*/
-	U1STAbits.URXISEL = 00;
-	/*
-		UxRXIE (receive interrupt enable)
-		** se fosse para transmissão: **
-		para a interrupção de transmissão o bit UxTXIE (transmit interrupt enable);
-	*/
-	IEC0bits.U1RXIE = 1;
-	/*
-		a definição da prioridade devem ser configurados os 3 bits UxIP (a configuração de prioridade é comum a todas as fontes de interrupção de uma UART)
-	*/
-	IPC6bits.U1IP=3;
-	/*
-		Cada UART pode ainda gerar uma interrupção quando é detetada uma situação de erro na receção de um caracter. Os erros detetados são de três tipos: erro de paridade, erro de framing
-￼￼￼		- se pretender fazer a deteção destes erros por interrupção, então é
-também necessário ativar essa fonte de interrupção, isto é, ativar o bit UxEIE
-	*/
-	IEC0bits.U1EIE = 1;
-
+int main(void)
+{
+	configureAll();
 	EnableInterrupts();
 
-	while(1);
+	TRISEbits.TRISE4 = 1;
+	TRISEbits.TRISE5 = 1;
+	TRISEbits.TRISE6 = 1;
+	TRISEbits.TRISE7 = 1;
+	T3CONbits.TCKPS = 2; // 1:256 prescaler (i.e fin = 78,125 KHz)
+
+	/* configuração da luz */
+	PR3 = 49999; // Fout = 20MHz / (32 * (39061,5 + 1)) = 2 Hz
+	TMR3 = 0; // Reset timer T3 count register
+	T3CONbits.TON = 1; // Enable timer T3 (must be the last command of the // timer configuration sequence)
+
+	OC1CONbits.OCM = 6;
+	OC1CONbits.OCTSEL = 1;
+	OC1CONbits.ON = 1;
+
+	while(1){
+		if(PORTEbits.RE4 == 0 && PORTEbits.RE5 == 0){
+			setPWM(0);
+			IEC0bits.T1IE = 1;
+		}else if(PORTEbits.RE4 == 0 && PORTEbits.RE5 == 1){
+			setPWM(100);
+			IEC0bits.T1IE = 0;
+		}else if(PORTEbits.RE4 == 1 && PORTEbits.RE5 == 0){
+			if(PORTEbits.RE7 == 0 && PORTEbits.RE6 == 0){
+				setPWM(3);
+				send2displays(3);
+			}else if(PORTEbits.RE7 == 0 && PORTEbits.RE6 == 1){
+				setPWM(15);
+				send2displays(15);
+			}else if(PORTEbits.RE7 == 1 && PORTEbits.RE6 == 0){
+				setPWM(40);
+				send2displays(40);
+			}else if(PORTEbits.RE7 == 1 && PORTEbits.RE6 == 1){
+				setPWM(90);
+				send2displays(90);
+			}
+			IEC0bits.T1IE = 0;
+		}
+	}
+	return 0;
 }
 
-void _int_(24) isr_uart1(void){
-	putc(U1RXREG);
-	/*
-		U1RXIF = Receive Interrupt Flag Status Bit
-	*/
-	IFS0bits.U1RXIF = 0;
+void configureAll(){
+	/*	Configuration of AD */
+	TRISBbits.TRISB14 = 1;  // RB14 digital output disconnected
+	AD1PCFGbits.PCFG14 = 0; // RB14 configured as analog input (AN14)
+
+	AD1CHSbits.CH0SA = 14; /* Selects AN14 as input for the A/D converter */
+	AD1CON2bits.SMPI = 7;  /* 1 samples will be converted and stored - CON => Configuration */
+
+	/* 3 instruções q são sempre necessárias por */
+	AD1CON1bits.SSRC = 7;
+	AD1CON1bits.CLRASAM = 1; /* clear ASAM */
+	AD1CON3bits.SAMC = 16;
+
+	/* Enable A/D converter */
+	AD1CON1bits.ON=1;
+
+	IFS1bits.AD1IF = 0; /* A flag status e usada para dizer quando  conclui a conversao */
+	IPC6bits.AD1IP = 1; /* Interrupt Priority Control6 e nesses bits e devemos fazer set do valor da prioridade
+	pode ir de 1 a 7 mas o 7 e reservado para interrupcoes de sistema */
+	IEC1bits.AD1IE = 1; /* Fazer eneble da AD1 interrupt */
+
+	/*	Configuração of AD */
+
+	/*	Configuração Timer 3 */
+
+	T3CONbits.TCKPS = 2;
+
+	PR3 = 49999; // Fout = 20MHz / (32 * (39061,5 + 1)) = 2 Hz
+	TMR3 = 0; // Reset timer T3 count register
+	T3CONbits.TON = 1; // Enable timer T3 (must be the last command of the // timer configuration sequence)
+
+	// configuraçao das interrupts tabela 7.1
+	IPC3bits.T3IP = 4; // Configurar a prioridade relativa
+	IFS0bits.T3IF = 0; // Reset do Instruction Flag
+	IEC0bits.T3IE = 1; // Autorizar a interrupção
+
+	/*	Configuração Timer 3 */
+
+	/*	Configuração Timer 1 */
+
+	T1CONbits.TCKPS = 3;
+
+	PR1 = 19530; // Fout = 20MHz / (32 * (39061,5 + 1)) = 2 Hz
+	TMR1 = 0; // Reset timer T3 count register
+	T1CONbits.TON = 1; // Enable timer T3 (must be the last command of the // timer configuration sequence)
+
+	// configuraçao das interrupts tabela 7.1
+	IPC1bits.T1IP = 4; // Configurar a prioridade relativa
+	IFS0bits.T1IF = 0; // Reset do Instruction Flag
+	IEC0bits.T1IE = 1; // Autorizar a interrupção
+
+	/*	Configuração Timer 1 */
 }
 
-void configUart(unsigned int baud, char parity, unsigned int Stopbits){
-	if(baud<600 || baud > 115200){
-		baud = 115200;
+void _int_(27) isr_adc(void){
+
+	int *p = (int *)(&ADC1BUF0);
+	int i, media = 0, v = 0;
+
+	for(i=0; i<8; i++){
+		media += p[i*4];
+		v += (p[i*4]*33+511)/1023;
 	}
-	if(parity!='N' && parity!='E' && parity!='O'){
-		parity = 'N';
-	}
-	if(Stopbits!=1 && Stopbits!=2){
-		Stopbits = 1;
-	}
+	media /= 8;
+	v /= 8;
 
-	U1BRG = ((20000000 + 8*baud)/ (16*baud))-1;
-	U1MODEbits.BRGH = 0;
+	value2display = toBcd(v);
 
-	/*
-		PDSEL<1:0>: Parity and Data Selection bits
-		11 = 9-bit data, no parity
-		10 = 8-bit data, odd parity
-		01 = 8-bit data, even parity
-		00 = 8-bit data, no parity
-	*/
-	if(parity=='N'){
-		U1MODEbits.PDSEL = 0;
-	}else if(parity=='E'){
-		U1MODEbits.PDSEL = 1;
-	}else if(parity=='O'){
-		U1MODEbits.PDSEL = 0b10;
-	}
-
-	/*
-		STSEL: Stop Selection bit
-		1 = 2 Stopbits
-		0 = 1 Stopbit
-	*/
-	U1MODEbits.STSEL = (--Stopbits);
-
-	/*
-		UTXEN: Transmit Enable bit
-		1 = UARTx transmitter is enabled. UxTX pin is controlled by UARTx (if ON = 1)
-		0 = UARTxtransmitterisdisabled. Any pending transmission is aborted and buffer is reset. UxTX pin is
-		controlled by port.
-	*/
-	U1STAbits.UTXEN = 1;
-
-	/*
-		URXEN: Receiver Enable bit
-		1 = UARTx receiver is enabled. UxRX pin is controlled by UARTx (if ON = 1)
-		0 = UARTx receiver is disabled. UxRX pin is ignored by the UARTx module. UxRX pin is controlled
-		by port.
-	*/
-	U1STAbits.URXEN = 1;
-
-	U1MODEbits.ON = 1;
+	IFS1bits.AD1IF = 0;
 }
 
-
-void putc(unsigned char byte2send){
-	/*
-		UTXBF: Transmit Buffer Full Status bit (read-only)
-		1 = Transmit buffer is full
-		0 = Transmit buffer is not full, at least one more character can be written
-	*/
-	while(U1STAbits.UTXBF);
-
-	//Transmit Buffer (UxTXREG)
-	U1TXREG = byte2send;
+void _int_(4) isr_T1(void){
+	AD1CON1bits.ASAM = 1; /* start conversao */
+	IFS0bits.T1IF = 0;
 }
 
-void puts(unsigned char* string){
-	int i = 0;
-	while(string[i]!='\0'){
-		putc(string[i++]);
-	}
+void _int_(12) isr_T3(void){
+	send2displays(value2display);
+	IFS0bits.T3IF = 0;
+
 }
+
+void setPWM(unsigned int dutyCycle){
+	OC1RS = ((PR3+1)*dutyCycle)/100;
+}
+

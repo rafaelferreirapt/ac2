@@ -13,6 +13,7 @@ typedef struct{
     unsigned int head;
     unsigned int tail;
     unsigned int count;
+    unsigned int overrun;
 } circularBuffer;
 
 volatile circularBuffer txb; // Transmission buffer
@@ -94,8 +95,8 @@ void _int_(VECTOR_UART1) isr_uart1(void){
 		IFS0bits.U1TXIF = 0;
 	}
 	if(IFS0bits.U1RXIF){
-		while(U1STAbits.URXDA && rxb.count < BUF_SIZE){
 		//data available && FIFO não está cheio
+		while(U1STAbits.URXDA && rxb.count < BUF_SIZE){
 			rxb.data[rxb.tail] = U1RXREG; // Read character from UART and
 			// write it to the "tail" position
 		    //  of the reception buffer
@@ -106,7 +107,9 @@ void _int_(VECTOR_UART1) isr_uart1(void){
 			// If reception buffer is not full (e.g. count < BUF_SIZE) then increment "count" variable
 			if(rxb.count < BUF_SIZE){
 				rxb.count++;
+				rxb.overrun = 0;
 			}else{
+				rxb.overrun = 1;
 				// increment "head" variable (discard oldest character)
 				rxb.head = (rxb.head + 1) & INDEX_MASK;
 			}
@@ -187,9 +190,9 @@ void comDrv_config(unsigned int baud, char parity, unsigned int Stopbits){
 
 	/*
 		** UART configure interrupts **
-		UTXISEL<1:0> do registo UxSTA -> O modo como as interrupções são geradas;
+		URXISEL<1:0> do registo UxSTA -> O modo como as interrupções são geradas;
 	*/
-	U1STAbits.UTXISEL = 00;
+	U1STAbits.URXISEL = 00;
 }
 
 char comDrv_getc(char *pchar){

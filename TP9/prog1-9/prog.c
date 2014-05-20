@@ -179,9 +179,9 @@ void comDrv_config(unsigned int baud, char parity, unsigned int Stopbits){
 
 	/*
 		** UART configure interrupts **
-		UTXISEL<1:0> do registo UxSTA -> O modo como as interrupções são geradas;
+		UrXISEL<1:0> do registo UxSTA -> O modo como as interrupções são geradas;
 	*/
-	U1STAbits.UTXISEL = 00;
+	U1STAbits.URXISEL = 00;
 }
 
 char comDrv_getc(char *pchar){
