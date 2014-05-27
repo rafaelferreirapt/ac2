@@ -4,32 +4,24 @@
 		"selected_items":
 		[
 			[
-				"IPC",
-				"IPC2bits"
+				"PORE",
+				"PORTEbits"
 			],
 			[
-				"IFS",
-				"IFS0bits"
+				"RE",
+				"RE5"
 			],
 			[
-				"fla",
-				"flag"
+				"POR",
+				"PORTEbits"
 			],
 			[
-				"va",
-				"value"
+				"prin",
+				"printInt10"
 			],
 			[
-				"AD1",
-				"AD1IF"
-			],
-			[
-				"TRIS",
-				"TRISEbits"
-			],
-			[
-				"LAT",
-				"LATEbits"
+				"leds",
+				"ledsCounter"
 			],
 			[
 				"LATE",
@@ -37,83 +29,287 @@
 			],
 			[
 				"LA",
+				"LATEbits"
+			],
+			[
+				"LAT",
 				"LATE0"
 			],
 			[
-				"TR",
-				"TRISE4"
-			],
-			[
-				"TIR",
+				"TRIS",
 				"TRISEbits"
 			],
 			[
-				"dy",
-				"dutycycle"
+				"is",
+				"isr_t1"
 			],
 			[
-				"du",
-				"duty_cycle_percentage"
+				"L",
+				"LATE2"
 			],
 			[
-				"dut",
-				"duty_cycle_percentage"
+				"la",
+				"LATE1"
 			],
 			[
-				"U1RX",
-				"U1RXREG"
+				"put",
+				"puts"
 			],
 			[
-				"U1",
-				"U1MODEbits"
+				"U1s",
+				"U1STAbits"
 			],
 			[
-				"duy",
-				"duty_cycle_percentage"
+				"de",
+				"detpic32"
 			],
 			[
-				"Se",
-				"SENS_ADDRESS"
+				"READN",
+				"READING"
 			],
 			[
-				"SEN",
-				"SENS_ADDRESS"
+				"print",
+				"printStr"
 			],
 			[
-				"I2C1S",
-				"I2C1STATbits"
+				"SPI2",
+				"SPI2BUF"
 			],
 			[
-				"I2C1",
-				"I2C1CONbits"
+				"SP",
+				"SPI2BUF"
 			],
 			[
-				"I2C1CON",
-				"I2C1CONbits"
+				"SPIBU",
+				"SPI2BUF"
 			],
 			[
-				"S",
-				"SAMPLES"
+				"SPI",
+				"SPIBUSY"
 			],
 			[
-				"se",
-				"sequencia"
+				"MNS",
+				"MSTEN"
+			],
+			[
+				"f",
+				"fPBCLK"
 			],
 			[
 				"con",
 				"contador"
 			],
 			[
+				"le",
+				"contadorLedsEnable"
+			],
+			[
+				"tim",
+				"timer2"
+			],
+			[
+				"cont",
+				"contadorEnable"
+			],
+			[
+				"TR",
+				"TRISE"
+			],
+			[
+				"dy",
+				"dutyCycle"
+			],
+			[
+				"R",
+				"RE6"
+			],
+			[
+				"U1",
+				"U1RXREG"
+			],
+			[
+				"conta",
+				"contador"
+			],
+			[
+				"U1TX",
+				"U1TXIE"
+			],
+			[
+				"U1RX",
+				"U1RXIE"
+			],
+			[
+				"com",
+				"comDrv_getc"
+			],
+			[
+				"comd",
+				"comDrv_getc"
+			],
+			[
+				"comD",
+				"comDrv_putc"
+			],
+			[
+				"Ena",
+				"EnableUart1RxInterrupt"
+			],
+			[
+				"Dis",
+				"DisableUart1RxInterrupt"
+			],
+			[
+				"U1TXI",
+				"U1TXIE"
+			],
+			[
+				"UR",
+				"URXEN"
+			],
+			[
+				"U1E",
+				"U1EIF"
+			],
+			[
+				"str",
+				"string"
+			],
+			[
+				"IE",
+				"IEC0bits"
+			],
+			[
+				"IPC",
+				"IPC3bits"
+			],
+			[
+				"IFS",
+				"IFS0bits"
+			],
+			[
+				"v",
+				"value2display"
+			],
+			[
+				"volt",
+				"voltMax"
+			],
+			[
 				"T3",
 				"T3IF"
 			],
 			[
-				"T2",
-				"T2IF"
+				"vol",
+				"voltMin"
 			],
 			[
-				"d",
-				"da"
+				"VOl",
+				"voltMin"
+			],
+			[
+				"IEC",
+				"IEC1bits"
+			],
+			[
+				"ADI",
+				"AD1IP"
+			],
+			[
+				"ADC",
+				"AD1CON1bits"
+			],
+			[
+				"SAM",
+				"SAMPLES"
+			],
+			[
+				"AD",
+				"AD1CON1bits"
+			],
+			[
+				"ADCON",
+				"AD1CON3bits"
+			],
+			[
+				"AD1",
+				"AD1CON1bits"
+			],
+			[
+				"TRISB",
+				"TRISB14"
+			],
+			[
+				"isr",
+				"isr_adc"
+			],
+			[
+				"U1EX",
+				"U1RXREG"
+			],
+			[
+				"UxR",
+				"UxRXREG"
+			],
+			[
+				"UTX",
+				"UTXEN"
+			],
+			[
+				"C",
+				"configUart"
+			],
+			[
+				"UT",
+				"UTXBF"
+			],
+			[
+				"el",
+				"else"
+			],
+			[
+				"set",
+				"setPWM"
+			],
+			[
+				"IF",
+				"IFS0bits"
+			],
+			[
+				"TMR",
+				"TMR3"
+			],
+			[
+				"T1",
+				"T1CONbits"
+			],
+			[
+				"ir",
+				"isr_T3"
+			],
+			[
+				"AD1I",
+				"AD1IP"
+			],
+			[
+				"IP",
+				"IPC1bits"
+			],
+			[
+				"AD1CO",
+				"AD1CON3bits"
+			],
+			[
+				"AD1CON",
+				"AD1CON1bits"
+			],
+			[
+				"AD1C",
+				"AD1CON2bits"
+			],
+			[
+				"configure",
+				"configureAll"
 			],
 			[
 				"inc",
@@ -132,18 +328,6 @@
 				"while"
 			],
 			[
-				"de",
-				"debug"
-			],
-			[
-				"AD",
-				"ADDR_RD"
-			],
-			[
-				"prin",
-				"printStr"
-			],
-			[
 				"i2c1",
 				"i2c1_stop"
 			],
@@ -156,6 +340,10 @@
 				"i2c1_send"
 			],
 			[
+				"I2C1",
+				"I2C1RCV"
+			],
+			[
 				"re",
 				"return"
 			],
@@ -166,10 +354,6 @@
 			[
 				"ac",
 				"ack_bit"
-			],
-			[
-				"is",
-				"isonly0or1"
 			],
 			[
 				"A",
@@ -196,20 +380,8 @@
 				"comDrv_puts"
 			],
 			[
-				"put",
-				"comDrv_putc"
-			],
-			[
-				"Dis",
-				"DisableUart1RxInterrupt"
-			],
-			[
 				"comDr",
 				"comDrv_config"
-			],
-			[
-				"com",
-				"comDrv_puts"
 			],
 			[
 				"t",
@@ -236,19 +408,11 @@
 				"Stopbits"
 			],
 			[
-				"str",
-				"String"
-			],
-			[
 				"RB",
 				"RB8"
 			],
 			[
 				"l",
-				"LATBbits"
-			],
-			[
-				"L",
 				"LATBbits"
 			],
 			[
@@ -280,10 +444,6 @@
 				"endfor_2"
 			],
 			[
-				"la",
-				"LATE"
-			],
-			[
 				"add",
 				"addiu"
 			],
@@ -292,20 +452,12 @@
 				"seq2_down"
 			],
 			[
-				"cont",
-				"cont"
-			],
-			[
-				"RE",
-				"RE4"
+				"se",
+				"seq2_up"
 			],
 			[
 				"isr_",
 				"isr_T3"
-			],
-			[
-				"T1",
-				"T1IF"
 			],
 			[
 				"config",
@@ -323,6 +475,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2-Final/treino/ADC_TIMERa_TIMERb/prog.c",
+			"settings":
+			{
+				"buffer_size": 3023,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2-Final/guião8/ex3/prog.c",
+			"settings":
+			{
+				"buffer_size": 570,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -360,21 +528,59 @@
 	},
 	"file_history":
 	[
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP2/prog5/prog.s",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AF/Rafael/treino/2exercicio_PWM_LEDS_DISPLAY/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AF/Rafael/treino/mega_exercicio/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AF/Rafael/treino/mega_exercicio/prog.hex.s",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AF/Rafael/treino/uart-simples/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AF/Rafael/configuracoes/displays_7segmentos/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AF/Rafael/configuracoes/I2C/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP10/parte1/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AF/Rafael/configuracoes/ADC_READ/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AF/Rafael/treino/UART_LER_E_ENVIAR/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AF/Rafael/configuracoes/sequencias_leds_timer/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AF/Rafael/configuracoes/ocr_timer_tipeB/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2-Final/guião7/ex2/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2-Final/guião8/ex1/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2-Final/treino/2exercicio_PWM_LEDS_DISPLAY/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AIP/Rafael/c_ex2/main.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP4/prog15/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2-Final/treino/uart-ultimo/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP4/delay.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2-Final/treino/uart-simples/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2-Final/guião9/parte1/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2-Final/guião8/ex2/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2-Final/guião8/ex3/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP11/parte1/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP11/parte2/eeprom.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP11/parte2/eeprom.h",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP11/parte1/prog1/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP11/parte1/prog1/send.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2-Final/guião7/ex3/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2-Final/guião7/ex1/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AIP/Rafael/c_ex1/main.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP9/prog10/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP7/parte1prog3/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP9/prog1-9/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2-Final/guião9/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP8/sh/prog5.sh",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP8/prog12/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP8/prog10/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP8/prog11/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP7/parte2prog5/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP8/prog2/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP8/prog9/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP8/prog1/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2-Final/ex3/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP7/parte2prog4/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP7/parte2prog1/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AIP/Rafael/c_ex3/main.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP10/parte1/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP3/parte2prog1/prog.s",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2-Final/ex2/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP7/parte1prog4/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP6/prog4/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP7/parte1prog5/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP7/parte1prog2/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2-Final/ex1/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP7/parte1prog1/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2-Final/prog.sh",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/Partilhado 2º Ano 2º Semestre/AC2/Prática/testes praticos/testeac2terça",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/Partilhado 2º Ano 2º Semestre/AC2/Prática/testes praticos/testp2.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/Partilhado 2º Ano 2º Semestre/AC2/Prática/testes praticos/teste3_2013_ex2_2.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/Partilhado 2º Ano 2º Semestre/AC2/Prática/testes praticos/teste2013.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/Partilhado 2º Ano 2º Semestre/AC2/Prática/testes praticos/teste2011.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/Partilhado 2º Ano 2º Semestre/AC2/Prática/testes praticos/ex1_2014.s",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/Partilhado 2º Ano 2º Semestre/AC2/Prática/testes praticos/2014.txt",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/Partilhado 2º Ano 2º Semestre/AC2/Prática/testes praticos/2013",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/Partilhado 2º Ano 2º Semestre/AC2/Prática/testes praticos/2012",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP10/parte2.sh",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP10/parte2/i2c.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP10/parte2/i2c.h",
@@ -383,29 +589,17 @@
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP10/prog1/i2c.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP10/prog1/i2c.h",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP10/prog.sh",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP4/delay.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP9/sh/prog.sh",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP9/prog1-9/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP8/prog10/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP9/sh/prog.s",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP9/prog1-4/prog.c",
 		"/Users/gipmon/Google Drive/AlgC/Relatório Trabalho 2.gdoc",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP7/parte2prog3/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP7/parte2prog5/prog.c",
 		"/Users/gipmon/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP7/parte2prog4/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP7/parte2prog1/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP7/parte2prog2/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP8/prog9/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP7/parte1prog4/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP7/parte1prog5/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP8/prog6/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP8/prog5/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP8/prog4/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP8/prog3/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP8/prog2/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP8/sh/prog5.sh",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP8/prog1/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP8/sh/prog1.sh",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/.gitignore",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/Partilhado 2º Ano 2º Semestre/AC2/Prática/Práticas - Anos Anteriores/AC2 - Joana/Aula9/Ex1.c",
@@ -413,12 +607,9 @@
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AIP/Rodrigo/Ex7/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AIP/Rodrigo/Ex6/prog.s",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AIP/Rafael/c_ex4/main.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AIP/Rafael/c_ex2/main.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AIP/Rafael/c_ex3/main.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AIP/Rafael/c_ex3/main_polling.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AIP/Rafael/assembly_ex7/assembly_ex.s",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AIP/Rafael/enunciados.txt",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AIP/Rafael/c_ex1/main.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/prog7/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP4/prog2/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP4/send2displays.c",
@@ -433,19 +624,16 @@
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AIP/Rafael/assembly_ex1.s",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AIP/Rafael/assembly_ex1.hex",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/_/2011/1.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP4/prog15/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/_/2011/2.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP4/prog9/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP7/prog2/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP7/prog3/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP7/sh/prog1.sh",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP6/prog4/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP7/prog1/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP7/sh/prog.sh",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP4/tobcd.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP5/prog4/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/_/prog_tp3.s",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP3/parte2prog1/prog.s",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP3/parte3prog3/prog.s",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP2/prog1/prog.s",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP3/parte1prog1/prog.s",
@@ -467,21 +655,21 @@
 		"/home/rafael/AC2/.gitignore",
 		"/home/rafael/AC2/TP1/prog5/prog.s",
 		"/home/rafael/AC2/TP1/prog4/prog.s",
-		"/home/rafael/AC2/TP1/prog3/prog3.s",
-		"/home/rafael/AC2/TP1/prog2/prog2.s",
-		"/home/rafael/AC2/TP1/prog1/prog1.s",
-		"/usr/share/applications/sublime.desktop",
-		"/usr/share/applications/defaults.list"
+		"/home/rafael/AC2/TP1/prog3/prog3.s"
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
 		"height": 93.0,
 		"where_history":
 		[
+			"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2-Final",
+			"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2",
+			"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP8",
+			"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP9",
 			"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2",
 			"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AIP/Rafael",
 			"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2"
@@ -492,8 +680,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"(){",
-			"*/\n",
+			"printInt(",
+			"PORTEbits",
+			"OERR",
+			"U1EIF",
+			"EIE",
+			"	\n",
 			"debugging",
 			"TC74_CLK_FREQ",
 			"UTXBF",
@@ -535,8 +727,67 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2-Final/treino/ADC_TIMERa_TIMERb/prog.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3023,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2684,
+								2684
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2053.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2-Final/guião8/ex3/prog.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 570,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								388,
+								396
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -579,7 +830,7 @@
 	{
 		"height": 256.0
 	},
-	"project": "project.sublime-project",
+	"project": "untitled.sublime-project",
 	"replace":
 	{
 		"height": 56.0
@@ -616,7 +867,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 195.0,
+	"side_bar_width": 150.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
