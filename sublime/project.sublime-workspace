@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"prin",
+				"printHex"
+			],
+			[
 				"IPC",
 				"IPC2bits"
 			],
@@ -138,10 +142,6 @@
 			[
 				"AD",
 				"ADDR_RD"
-			],
-			[
-				"prin",
-				"printStr"
 			],
 			[
 				"i2c1",
@@ -360,12 +360,14 @@
 	},
 	"file_history":
 	[
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AF/Rafael/configuracoes/displays_7segmentos/prog.c",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AF/Rafael/configuracoes/displays_7segmentos/untitled",
+		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AF/Rafael/treino/hexadecimal/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP2/prog5/prog.s",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AF/Rafael/treino/2exercicio_PWM_LEDS_DISPLAY/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AF/Rafael/treino/mega_exercicio/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AF/Rafael/treino/mega_exercicio/prog.hex.s",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AF/Rafael/treino/uart-simples/prog.c",
-		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AF/Rafael/configuracoes/displays_7segmentos/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AF/Rafael/configuracoes/I2C/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/TP10/parte1/prog.c",
 		"/Users/gipmon/Dropbox/Universidade de Aveiro/2º Ano 2ºSemestre/StudyWall/AC2/AF/Rafael/configuracoes/ADC_READ/prog.c",
@@ -492,6 +494,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"printInt(",
 			"(){",
 			"*/\n",
 			"debugging",
