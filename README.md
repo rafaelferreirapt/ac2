@@ -1,7 +1,7 @@
 Arquitectura de Computadores II
 ===================
 
-Aulas resolvidas por [Rafael Ferreira](mailto:rafael.ferreira@ua.pt) e [Rodrigo Cunha](rodrigocunha@ua.pt).
+Aulas resolvidas por [Rafael Ferreira](mailto:rafael.ferreira@ua.pt) e [Rodrigo Cunha](mailto:rodrigocunha@ua.pt).
 
 ***Conteúdos extra:***
 
