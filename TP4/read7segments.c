@@ -1,3 +1,7 @@
+/*
+Aulas resolvidas por Rafael Ferreira e Rodrigo Cunha.
+https://github.com/gipmon/ac2
+*/
 #include <detpic32.h>
 
 int read7segments(){
@@ -9,11 +13,10 @@ int read7segments(){
 			int elevado = 1;
 			int k = 0;
 			for(; k<i; k++){
-				elevado *= 2;	
+				elevado *= 2;
 			}
 			num += elevado;
 		}
 	}
 	return num;
 }
-

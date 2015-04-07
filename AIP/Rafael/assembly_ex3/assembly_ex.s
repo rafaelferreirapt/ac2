@@ -1,3 +1,5 @@
+	#https://github.com/gipmon/ac2
+
 	.equ SFR_BASE_HI, 0xBF88
 	.equ TRISE, 0x6100
 	.equ PORTE, 0x6110

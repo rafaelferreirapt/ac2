@@ -1,10 +1,11 @@
+#https://github.com/gipmon/ac2
 <<<<<<< HEAD
 	.eqv STR_MAX_SIZE, 20
 	.eqv PRINT_STR, 8
 	.eqv READ_STR, 9
 	.eqv PRINT_INT, 6
-	.eqv PRINT_INT_10, 7 
-	#	
+	.eqv PRINT_INT_10, 7
+	#
 	.data
 str_int:.asciiz "Introduza 2 strings: "
 str_res:.asciiz "Resultados:\n"
@@ -16,8 +17,8 @@ str_res:.asciiz "Resultados:\n"
 	.equ PRINT_STR, 8
 	.equ READ_STR, 9
 	.equ PRINT_INT, 6
-	.equ PRINT_INT_10, 7 
-	#	
+	.equ PRINT_INT_10, 7
+	#
 	.data
 str_int:.asciiz "Introduza 2 strings: "
 str_res:.asciiz "\nResultados:\n"
@@ -73,7 +74,7 @@ main:
 	jal strcat
 	move $a0, $v0
 	li $v0, PRINT_STR
-	syscall	
+	syscall
 	#
 	la $a0, str1
 	la $a1, str2
@@ -100,7 +101,7 @@ strcat:
 	#
 	move $s0, $a0 # dst
 	move $s1, $a1 # src
-	move $s2, $a0 # rp  
+	move $s2, $a0 # rp
 	#
 strcat_for:
 	lb $t0, 0($s0)
@@ -180,4 +181,3 @@ end_forcmp:
 	sub $v0, $t0,$t1
 
 	jr $ra
-

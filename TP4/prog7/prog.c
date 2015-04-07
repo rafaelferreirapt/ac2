@@ -1,3 +1,7 @@
+/*
+Aulas resolvidas por Rafael Ferreira e Rodrigo Cunha.
+https://github.com/gipmon/ac2
+*/
 void delay(unsigned int);
 void send2display10(int, int);
 int read7segments();
@@ -10,4 +14,3 @@ int main(void){
 		display = !display;
 	}
 }
-

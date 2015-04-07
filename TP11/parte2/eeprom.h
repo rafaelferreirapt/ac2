@@ -1,3 +1,7 @@
+/*
+Aulas resolvidas por Rafael Ferreira e Rodrigo Cunha.
+https://github.com/gipmon/ac2
+*/
 // eeprom.h
 #ifndef EEPROM_H
 #define EEPROM_H

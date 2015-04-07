@@ -1,3 +1,4 @@
+	#https://github.com/gipmon/ac2
 	.equ SFR_BASE_HI, 0xBF88			#16 Msbits of SFR area
 	.equ TRISE, 0x6100					#TRISE address is 0xBF886100
 	.equ PORTE, 0x6110					#PORTE address is 0xBF886110
@@ -28,4 +29,3 @@ for:
 	b for
 
 	jr $ra
-

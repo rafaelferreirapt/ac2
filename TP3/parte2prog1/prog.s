@@ -1,3 +1,4 @@
+	#https://github.com/gipmon/ac2
 	.equ SFR_BASE_HI, 0xBF88			#16 Msbits of SFR area
 	.equ TRISE, 0x6100				#TRISE address is 0xBF886100
 	.equ PORTE, 0x6110				#PORTE address is 0xBF886110
@@ -13,7 +14,7 @@ main:
 	andi $t3, $t3, 0xFFF0 # saida => 0
 	ori $t3, $t3, 0x00C0 # RE7 e RE6
 	sw $t3, TRISE($t2)
-	
+
 	#inicialização
 	li $v0, 12
 	syscall 		#reset ao timer
@@ -29,8 +30,8 @@ while:
 	beq $t6, $t4, endif
 	li $t0, 0
 endif:
-	andi $t5, $t3, 0x0080	
-	
+	andi $t5, $t3, 0x0080
+
 	beqz $t4, normal
 	bnez $t5, johnson_decrescente
 johnson_crescente:
@@ -47,7 +48,7 @@ johnson_decrescente:
 	xor $t1, $t1, 0x1
 	sll $t1, $t1, 4
 	or $t0, $t0, $t1
-	srl $t0, $t0, 1		
+	srl $t0, $t0, 1
 	b clean
 normal:
 	bnez $t5, decrescente_normal
@@ -60,26 +61,26 @@ decrescente_normal:
 	andi $t0, $t0, 0x0F
 	b clean
 clean:
-	
-	#impressao	
+
+	#impressao
 	#lui $a1, 0x4		# 4 0000
 	#ori $a1, $a1, 2		# base 2
 	#move $a0, $t0		# valor
 	#li $v0, 6		# $v0, valor do syscall
 	#syscall			# syscall
 	# !impressao
-	
+
 	#LAT E
 	lw $t3, LATE($t2)
 	andi $t3, $t3, 0xFFF0
 	or $t3, $t3, $t0
-	sw $t3, LATE($t2) 
+	sw $t3, LATE($t2)
 	#LAT E
 
 	#li $a0, 0xD
 	#li $v0, 3
 	#syscall
-	
+
 	li $v0, 12
 	syscall
 	b while

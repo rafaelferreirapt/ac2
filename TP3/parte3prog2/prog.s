@@ -1,3 +1,4 @@
+	#https://github.com/gipmon/ac2
 	.equ CALIBRATION_VALUE, 6000
 	.data
 str: 	.asciiz "\r\n"
@@ -28,7 +29,7 @@ while:
 	la $a0, str
 	li $v0, 8
 	syscall
-	#		
+	#
 	b while
 	#
 	lw $ra, 0($sp)

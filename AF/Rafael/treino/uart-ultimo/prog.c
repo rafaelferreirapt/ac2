@@ -1,3 +1,7 @@
+/*
+Aulas resolvidas por Rafael Ferreira e Rodrigo Cunha.
+https://github.com/gipmon/ac2
+*/
 /* Configurar UART2 e fazer o seguinte, sem usar syscalls:
 - Imprimir nome e nMec
 - Caso seja inserido o caracter 'space', mandar o valor lido nos portos RB0 a RB3 como argumento a uma função para imprimir esse mesmo valor nos displays (essa função já estava implementada)

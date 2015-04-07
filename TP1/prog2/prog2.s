@@ -1,4 +1,4 @@
-#	Grupo - Rafel e Rodrigo
+# https://github.com/gipmon/ac2
 #	2014
 	.equ INKEY, 1
 	.equ STRING, 8
@@ -13,9 +13,9 @@ while:
 	syscall
 	move $t0, $v0
 	beqz $t0, while
-if:	
+if:
 	bne $t0, '\n', endif
-	b return 
+	b return
 endif:
 	li $v0, STRING
 	la $a0, str
@@ -23,4 +23,4 @@ endif:
 	b while
 return:
 	li $v0, 0
-	jr $ra	
+	jr $ra

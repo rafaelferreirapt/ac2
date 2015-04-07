@@ -1,14 +1,15 @@
+	#https://github.com/gipmon/ac2
 	.text
 	.globl main
 main:
-	li $v0,12 
+	li $v0,12
 	syscall # reset timer
 	li $t0, 0 # s contador
-while:	
+while:
 	li $v0,11
 	syscall # read core timer
-	div $t1, $v0, 20000000	
-	
+	div $t1, $v0, 20000000
+
 	#start if
 	beq $t1, $t0, while
 	#
@@ -22,8 +23,8 @@ while:
         li $v0,3
         syscall
 	#endif
-	
+
 	b while
-	
+
 	li $v0,0
 	jr $ra

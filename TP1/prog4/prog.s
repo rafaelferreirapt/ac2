@@ -1,4 +1,4 @@
-#	Grupo - Rafel e Rodrigo
+# https://github.com/gipmon/ac2
 #	2014
 	.equ PRINT_INT_10, 7
 	.equ READ_INT_10, 5
@@ -9,14 +9,14 @@ str1:	.asciiz "\nIntroduza um numero (sinal e módulo):"
 str2:	.asciiz "\nValor lido em base 2:"
 str3: 	.asciiz "\nValor lido em base 16:"
 str4: 	.asciiz "\nValor lido em base 10 (unsigned):"
-str5: 	.asciiz "\nValor lido em base 10 (signed):"	
+str5: 	.asciiz "\nValor lido em base 10 (signed):"
 	.text
 	.globl main
 main:
 while:
 	la $a0, str1
 	li $v0, PRINT_STR
-	syscall	
+	syscall
 #
 	li $v0, READ_INT_10
 	syscall

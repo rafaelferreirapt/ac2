@@ -1,3 +1,7 @@
+/*
+Aulas resolvidas por Rafael Ferreira e Rodrigo Cunha.
+https://github.com/gipmon/ac2
+*/
 void send2displays(char);
 void delay(unsigned int);
 unsigned char toBcd(unsigned char);

@@ -1,3 +1,7 @@
+/*
+Aulas resolvidas por Rafael Ferreira e Rodrigo Cunha.
+https://github.com/gipmon/ac2
+*/
 #include <detpic32.h>
 
 void delay(unsigned int);
@@ -21,4 +25,3 @@ int main(void){
 		LATBbits.LATB9 = !LATBbits.LATB9;
 	}
 }
-

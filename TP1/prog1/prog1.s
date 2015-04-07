@@ -1,4 +1,4 @@
-#	Grupo - Rafel e Rodrigo
+# https://github.com/gipmon/ac2
 #	2014
 	.equ PRINT_STR, 8
 	.data
@@ -11,4 +11,4 @@ main:
 	ori $v0,$0,PRINT_STR
 	syscall # printStr("AC2 – DETPIC32 primer\n");
 	ori $v0,$0,0 # return 0;
-	jr $ra 
+	jr $ra

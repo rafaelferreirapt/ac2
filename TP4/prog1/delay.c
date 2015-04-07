@@ -1,3 +1,7 @@
+/*
+Aulas resolvidas por Rafael Ferreira e Rodrigo Cunha.
+https://github.com/gipmon/ac2
+*/
 #define CALIBRATION_VALUE 6000
 
 void delay(unsigned int n_intervals)

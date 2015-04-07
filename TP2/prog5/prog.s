@@ -1,18 +1,19 @@
+	#https://github.com/gipmon/ac2
 	.text
 	.globl main
 main:
-	li $v0,12 
+	li $v0,12
 	syscall # reset timer
 	li $t0, 57 # seconds countr
 	li $t1, 59 # minutes count
 	li $t2, 23 # hours count
-while:	
+while:
 	li $v0,11
 	syscall # read core timer
-	
+
 	# START IF
 	blt $v0, 20000000, while
-		
+
 	# IMPRESSAO DO CONTADOR
 	lui $a1, 0x2 # 0x2 tamanho da impressao
 	ori $a1, $a1, 10 # base de impressao
@@ -23,7 +24,7 @@ while:
 	li $a0, ':'
 	li $v0, 3
 	syscall
-	# 
+	#
 	move $a0, $t1
 	li $v0, 6
 	syscall
@@ -36,7 +37,7 @@ while:
 	li $v0, 6
 	syscall
 	# IMPRESSAO DO CONTADOR
-	
+
 	# INCREMENTAR
 	addiu $t0, $t0, 1
 if1:	bne $t0, 60, endif1
@@ -54,11 +55,11 @@ endif1:
         li $v0,3
         syscall
 	# ENDIF
-	
+
 	li $v0, 12
 	syscall # reset timer
-	
+
 	b while
-	
+
 	li $v0,0
 	jr $ra

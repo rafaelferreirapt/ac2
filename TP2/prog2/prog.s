@@ -1,4 +1,4 @@
-#	Grupo - Rafel e Rodrigo
+#https://github.com/gipmon/ac2
 #	2014
 	.equ N_INT, 5
 	.equ TRUE, 1
@@ -16,9 +16,9 @@ str4:	.asciiz "\nResultado da ordenacao: "
 lista:	.space 20 # static unsigned int lista[N_INT]
 	.text
 	.globl main
-main:	
+main:
 	addiu $sp, $sp, -4
-	sw $ra, 0($sp) 
+	sw $ra, 0($sp)
 	#sw $s0, 4($sp) # unsigned int i
 	#sw $s1, 8($sp) # unsigned int n_trocas
 	#sw $s2, 12($sp) # unsigned lista
@@ -123,7 +123,7 @@ sequential_for1:
 sequential_for2:
 	bge	$s4, $s0, end_sequential_for2
 sequential_if:
-	sll $t3, $s3, 2 
+	sll $t3, $s3, 2
 	add $t3,$s1,$t3
 	lw $t5, 0($t3)	#array[i]
 	sll $t4, $s4, 2

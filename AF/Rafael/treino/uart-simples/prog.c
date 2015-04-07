@@ -1,4 +1,8 @@
 /*
+Aulas resolvidas por Rafael Ferreira e Rodrigo Cunha.
+https://github.com/gipmon/ac2
+*/
+/*
 ** UART simples **
 Imprime “Futebol Clube do Porto" sem syscall’s:
 Num contador de 4 bits, se introduzir '+' deve incrementar no contador, se introduzir '-' deve decrementar um valor.

@@ -1,4 +1,8 @@
 /*
+Aulas resolvidas por Rafael Ferreira e Rodrigo Cunha.
+https://github.com/gipmon/ac2
+*/
+/*
 Lê do dip-switch 2 bits, e consoante a codificação binária faz:
     * 00: um contador binário decrescente é emitido nos leds (4 leds) a uma frequência de 20Hz imposta pelo timer do relógio do tipo A (se o relógio do tipo B estiver ligado deve desligá-lo);
     * 01: um contador binário crescente com uma frequência de 30Hz imposta pelo relógio do tipo B (se o relógio do tipo A estiver ligado deve desligá-lo);
@@ -132,5 +136,3 @@ void _int_(8) isr_t2(void){
 	ledsCounter();
 	IFS0bits.T2IF = 0;
 }
-
-

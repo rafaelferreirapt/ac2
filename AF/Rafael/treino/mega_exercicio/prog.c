@@ -1,4 +1,8 @@
 /*
+Aulas resolvidas por Rafael Ferreira e Rodrigo Cunha.
+https://github.com/gipmon/ac2
+*/
+/*
 Usando uma variável percentage_duty de 0 a 100 implemente um duty cycle no timer B de 20Hz. Que incrementa com + 5, e -5 usando a UART com interrupção de recepção.
 Usando o dipswitch tendo a combinação binária 11 deve fazer freeze do valor e com outros deve deixar mudar o valor do dutycycle o OCR.
 Usando os leds deve indicar qual o valor em barra de leds do duty cycle (perecntage), sendo 0 tudo apagado e 100 tudo ligado.

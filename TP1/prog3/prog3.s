@@ -1,4 +1,4 @@
-#	Grupo - Rafel e Rodrigo
+# https://github.com/gipmon/ac2
 #	2014
 	.equ GETCHAR, 2
 	.equ PUTCHAR, 3

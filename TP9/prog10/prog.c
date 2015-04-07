@@ -1,3 +1,7 @@
+/*
+Aulas resolvidas por Rafael Ferreira e Rodrigo Cunha.
+https://github.com/gipmon/ac2
+*/
 #include <detpic32.h>
 
 #define DisableUart1RxInterrupt() IEC0bits.U1RXIE = 0

@@ -1,3 +1,7 @@
+/*
+Aulas resolvidas por Rafael Ferreira e Rodrigo Cunha.
+https://github.com/gipmon/ac2
+*/
 #include "detpic32.h"
 
 int sequencia[] = {0x01, 0x02, 0x4, 0x6, 0x8,

@@ -1,3 +1,7 @@
+/*
+Aulas resolvidas por Rafael Ferreira e Rodrigo Cunha.
+https://github.com/gipmon/ac2
+*/
 #include <detpic32.h>;
 
 /* Exercício 3 - Neste exercício deve-se ler o valor da ADC e apresentar

@@ -1,3 +1,7 @@
+/*
+Aulas resolvidas por Rafael Ferreira e Rodrigo Cunha.
+https://github.com/gipmon/ac2
+*/
 #include <detpic32.h>
 
 void delay(unsigned int);
@@ -140,4 +144,3 @@ void _int_(12) isr_T3(void){
 void setPWM(unsigned int dutyCycle){
 	OC1RS = ((PR3+1)*dutyCycle)/100;
 }
-

@@ -1,3 +1,7 @@
+/*
+Aulas resolvidas por Rafael Ferreira e Rodrigo Cunha.
+https://github.com/gipmon/ac2
+*/
 #include <detpic32.h>
 
 int main(void)
@@ -6,7 +10,7 @@ int main(void)
 	AD1PCFGbits.PCFG14 = 0; // RB14 configured as analog input (AN14)
 
 	AD1CHSbits.CH0SA = 14; /* Selects AN14 as input for the A/D converter */
-	AD1CON2bits.SMPI = 0; /* 1 samples will be converted and stored 
+	AD1CON2bits.SMPI = 0; /* 1 samples will be converted and stored
 							CON => Configuration */
 
 	/* Conversion trigger selection bits: in this

@@ -1,3 +1,7 @@
+/*
+Aulas resolvidas por Rafael Ferreira e Rodrigo Cunha.
+https://github.com/gipmon/ac2
+*/
 #include <detpic32.h>
 
 int main(void){
@@ -6,10 +10,10 @@ int main(void){
 	U1BRG = (20000000 / (16*115200))-1;
 	U1MODEbits.BRGH = 0;
 
-	U1MODEbits.PDSEL = 00; 
+	U1MODEbits.PDSEL = 00;
 
 	/*
-	PDSEL<1:0>: Parity and Data Selection bits 
+	PDSEL<1:0>: Parity and Data Selection bits
 	11 = 9-bit data, no parity
 	10 = 8-bit data, odd parity
 	01 = 8-bit data, even parity
@@ -19,7 +23,7 @@ int main(void){
 	U1MODEbits.STSEL = 0;
 
 	/*
-	STSEL: Stop Selection bit 
+	STSEL: Stop Selection bit
 	1 = 2 Stopbits
 	0 = 1 Stopbit
 	*/
